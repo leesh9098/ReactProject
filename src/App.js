@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Router, Route } from "react-router-dom";
+import Home from "./routes/Home";
+import { Youtube1, Youtube2, Youtube3 } from "./routes/YoutubeLink";
+import Community from "./routes/Community";
+import Contest from "./routes/Contest";
+import Goods from "./routes/Goods";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Route path="/" exact={true} component={Home} />
+      <Route path="/youtubelink1" component={Youtube1} />
+      <Route path="/youtubelink2" component={Youtube2} />
+      <Route path="/youtubelink2" component={Youtube3} />
+      <Route path="/community" component={Community} />
+      <Route path="/contest" component={Contest} />
+      <Route path="/goods" component={Goods} />
+      <Route path="/cookingclass" component={CookingClass} />
+    </Router>
   );
 }
 
